@@ -1,5 +1,5 @@
 # Virtual environment
-.venv/
+djangoEnv/
 
 # Python
 __pycache__/
@@ -16,3 +16,5 @@ media/
 # IDE
 .vscode/
 .idea/
+
+djangoNotes.txt
