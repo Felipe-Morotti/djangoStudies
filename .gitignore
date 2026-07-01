@@ -1,18 +1,5 @@
-# Virtual environment
-djangoEnv/
-
-# Python
-__pycache__/
-*.pyc
-*.pyo
-
-# Django
-db.sqlite3
-media/
-
-# Environment variables
-.env
-
-# IDE
-.vscode/
-.idea/
+**/djangoEnv/
+**/db.sqlite3
+**/__pycache__/
+**/*.pyc
+**/.env
