@@ -1,0 +1,14 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+
+
+#*On the top line we set the most recent version of Docker Compose which is currently 3.9.
+#*Don't need it anymore.
+#Then we specify which services (or containers) we want to have running within our Docker host. It’s
+#possible to have multiple services running, but for now we just have one for web.
