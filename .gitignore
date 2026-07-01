@@ -3,4 +3,5 @@
 **/__pycache__/
 **/*.pyc
 **/.env
+**/ch3Env
 djangoNotes.txt
