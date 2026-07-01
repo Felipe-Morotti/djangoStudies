@@ -1,0 +1,25 @@
+Iniciar projeto:
+django-admin startproject projectName
+Antes de dar runserver, é preciso olhar para o migrate.
+O Django vem com apps nativos que precisam de tabelas no seu BD pra funcionar.
+MIGRATIONS são as instruções para criar essas tabelas. São a planta, enquanto
+o BD é a construção de verdade.
+Quick fix:
+python manage.py migrate
+As tabelas serão criadas, então pode-se digitar:
+python manage.py runserver
+A imagem maior: sempre que criar um novo modelo, mudar um campo em um modelo existente,
+ou add um novo app, vai ser preciso fazer:
+python manage.py makemigrations 
+e
+python manage.py migrate
+
+Arquivos de apps e seus significados:
+• admin.py is a configuration file for the built-in Django Admin app
+• apps.py is a configuration file for the app itself
+• migrations/ keeps track of any changes to our models.py file so our database and
+models.py stay in sync
+• models.py is where we define our database models, which Django automatically
+translates into database tables
+• tests.py is for our app-specific tests
+• views.py is where we handle the request/response logic for our web app
