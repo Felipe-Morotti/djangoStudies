@@ -1,0 +1,36 @@
+services:
+  web:
+    build: .
+    command: python /code/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - POSTGRES_DB=mydb
+      - POSTGRES_USER=myuser
+      - POSTGRES_PASSWORD=mypassword
+      - POSTGRES_HOST=db
+      - POSTGRES_PORT=5432
+    env_file:
+      - .env
+
+  db:
+    image: postgres:16
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_DB=mydb
+      - POSTGRES_USER=myuser
+      - POSTGRES_PASSWORD=mypassword
+    env_file:
+      - .env
+
+volumes:
+  postgres_data:
+#*On the top line we set the most recent version of Docker Compose which is currently 3.9.
+#*Don't need it anymore.
+#Then we specify which services (or containers) we want to have running within our Docker host. It’s
+#possible to have multiple services running, but for now we just have one for web.
